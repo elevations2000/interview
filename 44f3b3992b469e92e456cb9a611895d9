@@ -1,0 +1,55 @@
+a. CSS 1
+	b. HTML / HTML5 2
+	c. Javascript 
+	i. Javascript 2
+	ii. Bootstrap 1
+	iii. Jquery 2
+	iv. Angular 1
+	v. Unify 1
+	d. Linux 1
+	i. Command line 1
+	ii. Shell Scripting 1
+	iii. Piped commands 1
+	e. .net 2
+	i. C# 1
+	ii. VB f. PHP 1
+	i. PHP 5.x 1
+	ii. CTFr Framework 1
+	iii. Codeigniter 1
+	iv. Drupal 1
+	g. Python 1
+	h. Ruby On Rails 1
+	i. SQL 
+	i. SQL 3
+	ii. Stored Procedures 1
+	iii. Views 1
+	
+	Need practice on the following
+	
+	Copy of code
+	import java.io.*; // needed for BufferedReader, InputStreamReader, etc.
+	
+	/** A Java program that demonstrates console based input and output. */
+	public class MyConsoleIO 
+	{
+	// Create a single shared BufferedReader for keyboard input
+	private static BufferedReader stdin = 
+	new BufferedReader( new InputStreamReader( System.in ) );
+	
+	// Program execution starts here
+	public static void main ( String [] args ) throws IOException
+	{
+	// Prompt the user
+	System.out.print( "Type some data for the program: " );
+	
+	
+	// Read a line of text from the user.
+	String input = stdin.readLine();
+	
+	// Display the input back to the user.
+	System.out.println( "input = " + input );
+	
+	} // end main method
+	
+	} // end MyConsoleIO class
+
