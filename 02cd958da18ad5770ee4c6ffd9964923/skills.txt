@@ -1,0 +1,43 @@
+First off let me say thank you for this opportunity. I have graded my skills honestly based on where they are currently. To be honest it has been a few years since I've had to some real coding, so I'm a bit rusty. 
+
+That being said, I want you to know that I am willing to learn and willing to work very hard. I am very motivated. 
+
+Again, Thank you for this opportunity. Below are the skill ratings.
+
+Sincerely,
+Jay Fletcher 
+
+
+
+
+For each of the following indicate your skill from 0-5, where 0 is "never heard of it", 1 is "heard of it but never used", 2 is entry level with < 6 months of real world experience, and 5 is an expert. 
+
+LvL			Skills
+---------------------------------------
+[3]			a.	CSS
+[4]			b.	HTML / HTML5
+[2]			c.	Javascript
+[2]				i.		Javascript
+[2]				ii.		Bootstrap 
+[2]				iii.	Jquery
+[1]				iv.		Angular
+[1]				v.		Unify
+[3]			d.	Linux
+[3]				i.		Command line
+[1]				ii.		Shell Scripting
+[1]				iii.	Piped commands
+[1]			e.	.net
+[1]				i.	C#
+[1]				ii.	VB
+[4]			f.	PHP
+[4]				i.		PHP 5.x
+[0]				ii.		CTFr Framework
+[4]				iii. 	Codeigniter
+[1]				iv.		Drupal
+[1]			g.	Python
+[2]			h.	Ruby On Rails
+[3]			i.	SQL
+[3]				i.		SQL
+[1]				ii.		Stored Procedures
+[1]				iii.	Views
+
