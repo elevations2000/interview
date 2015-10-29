@@ -1,1 +1,1 @@
-PLEASE RUN INDEX.PHP
+Please copy the contents of this folder to a dev server running php and run index.php
