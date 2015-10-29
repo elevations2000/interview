@@ -1,7 +1,9 @@
-<!DOCTYPE html>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -11,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?=$stylesheets;?>
 </head>
 <body>
-    <header role="banner">
+    <header role="banner" class="main-header">
     
         <h1><?=$title;?></h1>
         <nav role="navigation">
@@ -19,8 +21,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li><a href="<?=site_url('welcome/');?>">Welcome</a></li>
                 <li><a href="<?=site_url('welcome/hourglass');?>">Hourglass Test</a></li>
 				<li><a href="<?=site_url('welcome/css');?>">CSS Test</a></li>
-				<li><a href="<?=site_url('welcome/skills');?>">Skills</a></li>
-				<li><a href="<?=site_url('welcome/example');?>">Example Code</a></li>
+				<li><a href="<?=site_url('welcome/skills');?>">Skill Ratings</a></li>
+				<li><a href="<?=site_url('welcome/examples');?>">Code Examples</a></li>
             </ul>		
         </nav>
         
@@ -34,12 +36,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </aside>
  -->       
     </div>
-<!-- Not using a footer
-    <footer role="contentinfo">
-        <small>Copyright &copy; <time datetime="2015">2015</time></small>
+    <footer role="contentinfo" class="main-footer">
+        <p class="copyright"><small>Submitted by</small></p>
+		<p class="identifier"><small><?=md5('jayjfletcher@gmail.com');?></small></p>
     </footer>
--->	
-    <!--[if lt IE 9]><script src="<?=base_url('js/html5shiv-printshiv.js')?>" media="all"></script><![endif]-->
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<script src="<?=base_url('js/scripts.js')?>" media="all"></script>
 </body>
 </html>

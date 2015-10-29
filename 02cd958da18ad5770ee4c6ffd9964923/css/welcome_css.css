@@ -1,26 +1,29 @@
 
-body
+article
 {
 	font-family:"Arial", Gadget, sans-serif;
 	color:#87ceeb;
-	width: 920px;
 }
-h1,h2,#box1,#box2,#box3 
+article p
+{
+	margin-left:0;
+} 
+h2,h3,#box1,#box2,#box3 
 {
 	font-weight:bold;
 }
-h1
+h3
 {
 	font-size:2.42em;
 }
-h2{
+h3{
 	font-size:1.08em;
 }
 p,span
 {
 	font-size:0.75em;
 }
-div
+article div
 {
 	display:block;
 	text-align:center;
@@ -45,7 +48,7 @@ div
 #box1 span{
 	color:#000000;
 }
-#box2,#box3{
+.box{
 	box-shadow: 8px 8px #999999;
 	border-radius: 15px;
 }

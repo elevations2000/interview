@@ -1,11 +1,13 @@
 			<section>
 			
-                <header>
-                    <h2>CSS test for Junior Application Developer</h2>
-                </header>
                 
-                <article id="introduction">             
-                    <h3>Rhode Island Secretary of State</h3>
+                
+                <article>    
+					<header>
+						<h2>CSS test for Junior Application Developer</h2>
+						<h3>Rhode Island Secretary of State</h3>
+					</header>
+                    
                     <p>
 						Working for the Rhode Island Secretary of State is very rewarding.  There are many challenges for junior and senior level developers alike.  Be ready to take on lots of responsibility very quickly.  We will be moving fast and we will have high expectations regardless of where you currently are in your career.
 					</p>

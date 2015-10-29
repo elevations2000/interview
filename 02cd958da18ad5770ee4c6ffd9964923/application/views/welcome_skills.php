@@ -1,27 +1,16 @@
 			<section>
-			
-                <header>
-                    <h2>Getting Started</h2>
-                    <nav role="navigation">
-                        <ul>
-                            <li><a href="#introduction">Introduction</a></li>
-                            <li><a href="#instructions">Thank You</a></li>
-                        </ul>
-                    </nav>
-                </header>
+
                 
-                <article id="introduction">             
-                    <h3>Introduction</h3>
-                    <p>Welcome to <abbr title="HyperText Markup Language 5">HTML5</abbr> Bones. This is a template that contains comments to aid you with setting up your <abbr title="HyperText Markup Language 5">HTML5</abbr> document.</p>
+                <article>             
+                    <h3>Note</h3>
+                    <p>Below you will find an honest rating of my skills, based on where I feel they are at currently. I admit I'm a bit rusty. But I am more than willing to brush the dust off and learn new skills.</p>
+					<p>The following was created by traversing an array using a recursive function.
+					</p>
                 </article>
                 
-                <article id="instructions">
-                    <h3>Instructions</h3>
-                    <ol>
-                        <li>Read the comments in this template</li>
-                        <li>Decide how you think your content may fit into the template</li>
-                        <li>Start building your document</li>
-                    </ol>
+                <article class="rating-container">
+                    <h3>The Ratings</h3>
+                    <?=$skills;?>
                 </article>
 				
             </section>
