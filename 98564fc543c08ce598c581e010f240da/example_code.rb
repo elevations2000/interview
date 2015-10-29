@@ -1,5 +1,8 @@
+# This is a snippet of the code I wrote for an API I built an iOs app utilized that was submitted to the app store. 
+# The app would save user generated and reviewed coffee shops to the database I created in Postgres.
+
 class EstablishmentsController < ApplicationController
-  # Before these functions can be processed, user token must be authenticated
+  # Before these functions can be processed, user token must be authenticated against token in database
   before_action :authenticate_with_token!, only: [:index, :show, :update]
 
   # Function that creates a coffee shop to save to the database 
@@ -34,11 +37,13 @@ class EstablishmentsController < ApplicationController
     end
   end
 
+  # Function that returns all of the coffee shops in the database.
   def index
     @establishments = Establishment.all
     render 'index.json.jbuilder', status: :ok
   end
 
+  # Function that shows one particular coffee shop based on the id passed through in a parameter from the iOs app.
   def show 
     @establishment = Establishment.find_by(id: params[:id])
     if @establishment
@@ -52,6 +57,8 @@ class EstablishmentsController < ApplicationController
     end
   end
 
+
+  # Function that would update a particular coffee shop in the database.
   def update
     attributes = set_attributes(params)
     @establishment = Establishment.find_by(id: params[:id])
@@ -65,6 +72,7 @@ class EstablishmentsController < ApplicationController
     end
   end
 
+  # Function that searches through the database for coffee shops that fit the parameters given by the iOs app.
   def search
     @establishments = Establishment.where(nil) # creates an anonymous scope
     @establishments = @establishments.wifi(params[:wifi]) if params[:wifi].present?
@@ -76,6 +84,7 @@ class EstablishmentsController < ApplicationController
     render json: @establishments, status: :ok
   end
 
+  # Function to delete a coffee shop
   def delete
     @establishment = Establishment.find_by(id: params[:id])
     if @establishment.destroy
@@ -85,7 +94,7 @@ class EstablishmentsController < ApplicationController
   
 
   private 
-
+  # Set the attributes to use when updating a coffee shop object in the database.
   def set_attributes(params)
     attributes = { }
     list = [:name, :street_address, :city,
@@ -98,6 +107,7 @@ class EstablishmentsController < ApplicationController
     attributes
   end
 
+  # Gets the current rating and add the new rating then divides by 2 to get the new average rating
   def update_ratings(params, establishment)
     updated_ratings = { }
     list = [:coffee_quality, :price, :ambiance, :wifi]
