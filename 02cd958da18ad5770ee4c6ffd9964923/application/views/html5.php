@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<ul>
                 <li><a href="<?=site_url('welcome/');?>">Welcome</a></li>
                 <li><a href="<?=site_url('welcome/hourglass');?>">Hourglass Test</a></li>
-				<li><a href="<?=site_url('welcome/css');?>">CSS Test</a></li>
+				<li><a href="<?=base_url('_welcome.html')?>">CSS Test</a></li>
 				<li><a href="<?=site_url('welcome/skills');?>">Skill Ratings</a></li>
 				<li><a href="<?=site_url('welcome/examples');?>">Code Examples</a></li>
             </ul>		
