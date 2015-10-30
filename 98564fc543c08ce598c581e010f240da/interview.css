@@ -1,0 +1,47 @@
+body {
+  font-family:"Arial", Gadget, sans-serif;
+  color:#87ceeb;
+  font-size: 12px;
+}
+
+p {
+  margin-left:0;
+  font-size: 12px;
+} 
+
+h2 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+div {
+  display: block;
+  text-align: center; 
+  margin: 50px 50px 50px 40px;
+}
+
+#box1, #box2, #box3 {
+  border: solid 3px blue;
+  background-color: #ffa500;  
+  font-size: 12px;
+  width: 100px;
+  height: 100px;
+  box-shadow: 8px 8px rgba(0,0,0,.5) inset;
+}
+
+#box2, #box3 {
+  box-shadow: 8px 8px rgba(153,153,153,1);
+  border-radius: 10px;
+}
+
+#box1 {
+  color: black;
+}
+
+#box2 {
+  color: red;
+}
+
+#box3 {
+  color: blue;
+}
