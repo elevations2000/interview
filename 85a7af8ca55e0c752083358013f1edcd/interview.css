@@ -1,0 +1,77 @@
+
+h1 {
+	/* font for header 1*/
+	font-family: arial;
+	
+}
+
+h2 { 
+	/* font for header 2 
+	font size  */
+	font-family:arial;
+	font-size: medium;
+}
+
+div {
+	/* align text to center */
+	text-align: center;
+}
+
+body {
+	/* font for body, font color */
+	font-family: arial;
+	color: #00BFFF;
+}
+
+#box1 {
+	/* align text to center of box
+		set background color
+		set text color
+		width of box
+		padding for box
+		border for box
+		margin for box
+		height for box
+		box shadow */
+		
+	text-align: center;
+	background-color: #FF9900;
+	color: #000000;
+	width: 100px;
+    padding: 0px;
+    border: 3px solid blue;
+    margin: 50px;
+	height: 100px;
+	box-shadow: inset 5px 5px 10px black;
+}
+
+.box {
+	/* align text to center of box
+		set background color
+		set text color
+		width of box
+		set rounded edges in box
+		padding for box
+		border for box
+		margin for box
+		height for box
+		box shadow */
+		
+	text-align: center;
+	background-color: #FF9900;
+	color: red;
+	border-radius: 25px;
+	width: 100px;
+    padding: 0px;
+    border: 3px solid blue;
+    margin: 50px;
+	height: 100px;
+	box-shadow: 5px 5px grey;
+}
+
+#box3 {
+	/* set text color */
+	color: blue;
+}
+
+
