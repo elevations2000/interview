@@ -30,14 +30,6 @@ class Welcome extends CI_Controller {
 		$this->_prepareOutput(__FUNCTION__);
 	}
 	
-	public function css()
-	{	
-		$this->data['title'] = $this->data['title'] . 'CSS Test';
-		//add page specific css files then output
-		$this->_addStylesheet(__CLASS__ .'_'. __FUNCTION__);
-		//static output
-		$this->_prepareOutput(__FUNCTION__);
-	}
 		
 	public function skills()
 	{
