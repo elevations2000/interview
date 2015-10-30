@@ -101,6 +101,24 @@
 			return $output;
 	}
 ?>
+<?php
+$valid = TRUE;
+if(isset($_POST['generate']))
+{
+	if($_POST['height'] < 2 ||)
+	{
+		echo '<p class = "error">Height must be greater than greater than 1.</p>';
+		$valid = FALSE;
+	}
+	
+	if($_POST['remaining'] < 0 || $_POST['remaining'] > 100 )
+	{
+		echo '<p class = "error">Sand remaining must be between 0 and 100.</p>';
+		$valid = FALSE;
+	}
+}
+?>
+
 
 	<form action="_hourglass.php" method="post" accept-charset="utf-8">
 		<fieldset>
@@ -116,7 +134,7 @@
 	</form>
 <div class="hourglass">
 <?php
-if(isset($_POST['generate']))
+if($valid == TRUE)
 {
 	echo generateHourglass($_POST['height'],$_POST['remaining']);
 }
