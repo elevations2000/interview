@@ -1,4 +1,6 @@
 
+#This program is to be run in the terminal. Simply go into the folder with the MD5 hash number and from the terminal
+# type in ruby hourglass.rb to run the program. 
 
 def create_art(level)
   top = '_' * (level * 2 + 1)
