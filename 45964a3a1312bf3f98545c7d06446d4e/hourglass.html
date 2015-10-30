@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- Or you can go to http://jsfiddle.net/littlegustv/68ws9v4c/ -->
+<html>
+<head>
+<script type='text/javascript'>
+window.addEventListener("DOMContentLoaded", function () {
+
+	var form = document.getElementById("form");
+	var height = document.getElementById("height");
+	var percent = document.getElementById("percent");
+
+	var result = document.getElementById("result");
+
+	form.addEventListener("submit", function (e) {
+
+	    e.preventDefault();
+
+	    var h = Number(height.value);
+	    var p = Number(percent.value);
+	    var w = h * 2 + 1;
+
+	    var capacity = Math.pow(h, 2);
+	    var topC = Math.round(capacity * p / 100);
+
+	    var topRows = Math.floor(Math.sqrt(topC));
+	    var topRemainder = topC % Math.pow(topRows, 2);
+
+	    var resultString = "";
+
+	    resultString += "_".repeat(w) + "\n";
+
+	    for (var i = 0; i < 2 * h; i++) {
+
+	        if (i < h) {
+	            var c = w - 2 * i - 2;
+	            if (i == h - topRows - 1) {
+	                var r = Math.ceil(topRemainder / 2),
+	                    l = Math.floor(topRemainder / 2),
+	                    space = c - topRemainder;
+	                resultString += " ".repeat(i) + "\\" + "x".repeat(l) + " ".repeat(space) + "x".repeat(r) + "/" + " ".repeat(i);
+	            } else if (i > h - topRows - 1) {
+	                resultString += " ".repeat(i) + "\\" + "x".repeat(c) + "/" + " ".repeat(i);
+	            } else {
+	                resultString += " ".repeat(i) + "\\" + " ".repeat(c) + "/" + " ".repeat(i);
+	            }
+	        } else {
+	            var blank = (i == 2 * h - 1) ? "_" : " ";
+	            var b = 2 * h - i - 1;
+	            var c = w - 2 * b - 2;
+	            if (i == h + topRows) {
+	                var r = Math.ceil(topRemainder / 2),
+	                    l = Math.floor(topRemainder / 2),
+	                    space = c - topRemainder;
+	                resultString += blank.repeat(b) + "/" + blank.repeat(l) + "x".repeat(space) + blank.repeat(r) + "\\" + blank.repeat(b);
+	            } else if (i > h + topRows) {
+	                resultString += blank.repeat(b) + "/" + "x".repeat(c) + "\\" + blank.repeat(b);
+	            } else {
+	                resultString += blank.repeat(b) + "/" + blank.repeat(c) + "\\" + blank.repeat(b);
+	            }
+	        }
+
+	        resultString += "\n";
+	    }
+
+	    result.style.height = 40 * h + "px";
+	    result.style.width = 10 * w + "px";
+	    result.value = resultString;
+
+	});
+
+});
+</script>
+</head>
+<body>
+	<form id='form'>
+		Height:<input type='number' min=1 value=10 id='height'></input><br>
+		Percentage:<input type='number' min=0 max=100 value=50 id='percent'></input><br>
+	    <input type='submit' value='Submit'></input>
+	</form>
+	<br>
+	<textarea id='result'></textarea>
+</body>
+</html>

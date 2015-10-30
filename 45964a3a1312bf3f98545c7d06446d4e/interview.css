@@ -1,0 +1,52 @@
+body
+{
+    color: #87ceeb;
+    font-family: sans-serif;
+    *background: url("./JrDevCSSTest.PNG");
+    width: 930px;
+}
+h1
+{
+    font-size: 40px;
+    margin: 13px 0px 26px 0px;
+    -webkit-margin-start: -3px;
+    -moz-margin-start: -3px;
+}
+h2
+{
+    font-size: 18px;
+    -webkit-margin-start: -1px;
+    -moz-margin-start: -1px;
+}
+p
+{
+    font-size: 12px;
+    max-width: 920px;
+}
+div {
+    text-align: center;
+    font-size: 12px;
+    margin: 0px auto 76px auto;
+    position: relative;
+    width: 108px;
+}
+#box1, .box {
+	font-weight: bold;
+    border: 3px solid #0000ff;
+    background-color: #FFA500;
+    height: 108px;
+    margin: 0px 0px 75px 37px;
+    border-radius: 14px;
+    box-shadow: 7px 7px 0px 0px rgba(0,0,0,0.4);
+}
+#box1 {
+	color: black;
+    border-radius: 0px;
+    box-shadow: 7px 7px 0px 0px rgba(0,0,0,0.4) inset;
+}
+#box2 {
+	color: red;
+}
+#box3 {
+	color: blue;
+}
