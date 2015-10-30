@@ -1,24 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends MY_Controller {
 
-	//all output stored in a single array 
-	protected $data = array(); 
 
 	public function __construct()
     {
         parent::__construct();
-		//The base HTML5 template used for all output
-		$this->data['template'] = 'html5';
 		//Base title and description
 		$this->data['title'] = "State of Rhode Island Interview : ";
 		$this->data['description'] = "A series of tests from the State of Rhode Island for a Junior Application Developer interview.";
-		//An array to hold any style sheets 
-		$this->data['stylesheets'] = '';
-		//Add some standard stylesheets
-		$this->_addStylesheet('normalize');
-		$this->_addStylesheet('styles');
+		$this->data['view'] = __CLASS__ .'_'. $this->uri->segment(2, 'index');
     }
 
 	public function index()
@@ -85,8 +77,6 @@ class Welcome extends CI_Controller {
 	{
 		// a place to store the hourglass
 		$this->data['hourglass'] = 'Please use the form above to generate an hourglass.';
-		//load the form validation library
-		$this->load->library('form_validation');
 		//check for user input
 		if($this->input->post('generate'))
 		{
@@ -101,7 +91,6 @@ class Welcome extends CI_Controller {
 			}
 			//If not valid just output the form again
 		}
-		$this->load->helper('form');
 		$this->data['title'] = $this->data['title'] . 'Hourglass Test';
 		$this->_addStylesheet(__CLASS__ .'_'. __FUNCTION__);
 		$this->_prepareOutput(__FUNCTION__);
@@ -208,37 +197,6 @@ class Welcome extends CI_Controller {
 				$i--;
 			}
 			return $output;
-	}
-	
-	private function _addStylesheet($name)
-	{
-		$this->data['stylesheets'][] = $name;
-	}
-	
-	private function _prepareOutput($function)
-	{
-		//load some helpers for use with the views
-		$this->load->helper(
-			array('html', 'form', 'url')
-		);
-		
-		//load the view but save it to inject into the base html5 template
-		$this->data['content'] = $this->load->view(__CLASS__ .'_'.$function , $this->data, TRUE);
-		
-		//Some would process the style sheets in the view 
-		//but I like to keep as much php as possible out of the view
-		if(!empty($this->data['stylesheets']))
-		{	
-			$html = '';
-			foreach($this->data['stylesheets'] as $stylesheet)
-			{
-				$html .= '<link href="'.base_url('css/'.$stylesheet.'.css').'" rel="stylesheet" media="all">' . "\n";
-			}
-			$this->data['stylesheets'] = strtolower($html);
-		}
-		
-		//inject everything into the html5 template and output it
-		$this->load->view($this->data['template'],$this->data);
 	}
 	
 }

@@ -1,34 +1,27 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Crud extends CI_Controller {
-
-	protected $data = array(); 
+class Crud extends MY_Controller {
 
 	public function __construct()
     {
-        parent::__construct();
-		$this->data['template'] = 'html5';
+        parent::__construct();		
 		$this->data['title'] = "CRUD : ";
 		$this->data['description'] = "A basic CRUD example for the State of Rhode Island Interview Test";
-		$this->data['stylesheets'] = '';
-		$this->data['view'] = __CLASS__ .'_'. $this->uri->segment(2, 'index');
-		$this->_addStylesheet('normalize');
-		$this->_addStylesheet('styles');
 		$this->_addStylesheet('crud');
+		$this->load->model('article_model', 'article', TRUE);
+		$this->data['view'] = __CLASS__ .'_'. $this->uri->segment(2, 'index');
     }
 
 	public function index()
 	{
-		$this->load->model('article_model', 'articles', TRUE);
-		$this->data['query'] = $this->articles->get_last_ten_entries();
+		$this->data['query'] = $this->article->get_last_ten_entries();
 		$this->data['title'] = $this->data['title'] . 'Last 10 entries';
 		$this->_prepareOutput(__FUNCTION__);
 	}
 	
 	public function create()
 	{
-		$this->load->library('form_validation');
 		//check for user input
 		if($this->input->post('create'))
 		{
@@ -38,27 +31,23 @@ class Crud extends CI_Controller {
 			//validate the input
 			if($this->form_validation->run() == TRUE)
 			{
-				$this->load->model('article_model', 'article', TRUE);
 				$this->article->title = $this->input->post('title');
 				$this->article->content = $this->input->post('content');
 				$this->article->date = date( 'Y-m-d H:i:s', time() );;
 				if($this->article->create())
 				{
 					$this->session->set_flashdata('message', 'Article successfully created!');
-					$this->load->helper('url');
 					redirect('/crud/', 'refresh');
 				}
 			}
 			//If not valid just output the form again
 		}
-		$this->load->helper('form');
 		$this->data['title'] = $this->data['title'] . 'Create';
 		$this->_prepareOutput(__FUNCTION__);
 	}
 	
 	public function retrieve()
 	{
-		$this->load->model('article_model', 'article', TRUE);
 		if($this->uri->segment(3))
 		{
 			
@@ -70,12 +59,10 @@ class Crud extends CI_Controller {
 					$this->article->content = $this->data['query']->content;
 				}else{
 					$this->session->set_flashdata('message', 'Unable to find specified article.');
-					$this->load->helper('url');
 					redirect('/crud/', 'refresh');
 				}
 		}else{
 			$this->session->set_flashdata('message', 'Please choose an article to update first!');
-			$this->load->helper('url');
 			redirect('/crud/', 'refresh');	
 		}
 		$this->data['title'] = $this->data['title'] . ' Retrieve';
@@ -84,10 +71,8 @@ class Crud extends CI_Controller {
 	
 	public function update()
 	{
-		$this->load->model('article_model', 'article', TRUE);
 		if($this->uri->segment(3))
 		{
-			$this->load->library('form_validation');
 			//check for user input
 			if($this->input->post('update'))
 			{
@@ -104,7 +89,6 @@ class Crud extends CI_Controller {
 					if($this->article->update())
 					{
 						$this->session->set_flashdata('message', 'Article successfully updated!');
-						$this->load->helper('url');
 						redirect('/crud/', 'refresh');
 					}
 				}
@@ -118,13 +102,11 @@ class Crud extends CI_Controller {
 					$this->article->content = $this->data['query']->content;
 				}else{
 					$this->session->set_flashdata('message', 'Unable to find specified article.');
-					$this->load->helper('url');
 					redirect('/crud/', 'refresh');
 				}
 			}
 		}else{
 			$this->session->set_flashdata('message', 'Please choose an article to update first!');
-			$this->load->helper('url');
 			redirect('/crud/', 'refresh');	
 		}
 		$this->load->helper('form');
@@ -134,7 +116,6 @@ class Crud extends CI_Controller {
 	
 	public function delete()
 	{
-		$this->load->model('article_model', 'article', TRUE);
 		if($this->article->id = $this->uri->segment(3))
 		{
 					if($this->article->delete())
@@ -146,32 +127,7 @@ class Crud extends CI_Controller {
 		}else{
 			$this->session->set_flashdata('message', 'Please choose an article to delete first!');
 		}
-		$this->load->helper('url');
 		redirect('/crud/', 'refresh');
-	}
-	
-	private function _addStylesheet($name)
-	{
-		$this->data['stylesheets'][] = $name;
-	}
-	
-	private function _prepareOutput()
-	{
-		$this->load->helper(
-			array('html', 'form', 'url')
-		);
-		$this->data['content'] = $this->load->view($this->data['view'], $this->data, TRUE);
-
-		if(!empty($this->data['stylesheets']))
-		{	
-			$html = '';
-			foreach($this->data['stylesheets'] as $stylesheet)
-			{
-				$html .= '<link href="'.base_url('css/'.$stylesheet.'.css').'" rel="stylesheet" media="all">' . "\n";
-			}
-			$this->data['stylesheets'] = strtolower($html);
-		}
-		$this->load->view($this->data['template'],$this->data);
 	}
 	
 }
