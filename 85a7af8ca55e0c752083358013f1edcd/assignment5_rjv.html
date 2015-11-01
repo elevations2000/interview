@@ -1,0 +1,51 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- Randall Ventrone -->
+<!-- 3/25/15 -->
+<!-- This program uses JavaScript to display a fortune after clicking a button -->
+<html xmlns = "http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Your Fortune Cookie</title>
+	  <!-- set bdi style to format lucky numbers to the color red -->
+	  <style type="text/css">
+	  bdi {
+    color: red;
+	} 
+		</style>
+	  <script type = "text/javascript">
+         <!--
+			function showFortune()
+			{
+				var luckyNumbers; // variable to hold the lucky numbers
+				var random; // to hold the random value
+				// array to hold the fortunes
+				var fortunes = new Array ("The road to rices is paved with homework", "Ignore your previous fortune", "Avoid taking unnecessary gambles")
+				
+				// give the leading text to the lucky numbers
+				luckyNumbers = "Lucky numbers: " + "<bdi>" + " ";
+				
+				// run a loop to generate 6 random numbers 1-60 and add it to the lucky numbers
+				for ( count = 1; count <= 6; ++count)
+				{
+				luckyNumbers += (Math.floor( 1 + Math.random() * 60) ) + " ";
+				} // end for loop
+				
+				luckyNumbers += "</bdi>";
+				
+				// display the fortune from the array with a random number as subscript not exceeding the array's value
+				document.getElementById("fortuneArea").innerHTML=fortunes[(Math.floor(Math.random() * fortunes.length ))] + "<br />" + luckyNumbers; 
+			}
+			
+		// -->
+      </script>  
+   </head>
+
+   <body>
+		<form action="">
+			<input type="button" value="Show my fortune!" onclick= "showFortune();" />
+		</form>
+		<div id="fortuneArea"></div>
+   </body>
+</html>

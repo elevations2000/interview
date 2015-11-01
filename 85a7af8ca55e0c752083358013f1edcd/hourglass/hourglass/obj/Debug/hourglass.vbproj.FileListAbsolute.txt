@@ -1,0 +1,14 @@
+C:\Users\Randall\Desktop\hourglass\hourglass\bin\Debug\hourglass.exe.config
+C:\Users\Randall\Desktop\hourglass\hourglass\bin\Debug\hourglass.exe
+C:\Users\Randall\Desktop\hourglass\hourglass\bin\Debug\hourglass.pdb
+C:\Users\Randall\Desktop\hourglass\hourglass\bin\Debug\hourglass.xml
+C:\Users\Randall\Desktop\hourglass\hourglass\obj\Debug\hourglass.Resources.resources
+C:\Users\Randall\Desktop\hourglass\hourglass\obj\Debug\hourglass.vbproj.GenerateResource.Cache
+C:\Users\Randall\Desktop\hourglass\hourglass\obj\Debug\hourglass.exe
+C:\Users\Randall\Desktop\hourglass\hourglass\obj\Debug\hourglass.xml
+C:\Users\Randall\Desktop\hourglass\hourglass\obj\Debug\hourglass.pdb
+C:\Users\Randall\Desktop\hourglass\hourglass\obj\Debug\hourglass.frmHourGlass.resources
+C:\Users\Randall\Documents\GitHub\85a7af8ca55e0c752083358013f1edcd\hourglass\hourglass\bin\Debug\hourglass.exe.config
+C:\Users\Randall\Documents\GitHub\85a7af8ca55e0c752083358013f1edcd\hourglass\hourglass\obj\Debug\hourglass.exe
+C:\Users\Randall\Documents\GitHub\85a7af8ca55e0c752083358013f1edcd\hourglass\hourglass\obj\Debug\hourglass.xml
+C:\Users\Randall\Documents\GitHub\85a7af8ca55e0c752083358013f1edcd\hourglass\hourglass\obj\Debug\hourglass.pdb
