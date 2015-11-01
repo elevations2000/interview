@@ -1,0 +1,52 @@
+body
+{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #87ceeb;
+	width:920px;	
+}
+
+div
+{
+	text-align:center;
+}
+p,div
+{
+	font-size:0.75em;
+}
+#box1,#box2, #box3{
+	
+	border: solid 3px blue;
+	background-color: #ffa500;
+	font-size: 12px;
+	font-weight: bold;
+	width: 108px;
+	height: 108px;
+	margin:75px;
+}
+#box1 {
+	color: #000000;
+	box-shadow: 7px 7px #996300 inset;
+}
+
+#box2 {
+	color:#ff0000;
+}
+
+#box3 {	
+	color:#0000ff;
+}
+
+.box
+{
+	box-shadow: 8px 8px #999999;
+	border-radius: 15px;
+}
+
+h1
+{
+	font-size:2.42em;
+}
+h2
+{
+	font-size:1.08em;
+}

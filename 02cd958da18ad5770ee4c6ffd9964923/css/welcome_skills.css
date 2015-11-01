@@ -1,0 +1,30 @@
+.rating-container li:last-child
+{
+	border-bottom:none;	
+}
+.rating-container li
+{
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#000000;	
+}
+.rating-container
+{
+	width:400px;
+}
+.rating
+{
+	background-color:#eeeeee;
+	width:25px;
+	text-align:center;
+	display:inline-block;
+	float:right;
+}
+ol 
+{
+	`list-style-type: lower-alpha;
+}
+ol ol 
+{
+	list-style-type: lower-roman;
+}

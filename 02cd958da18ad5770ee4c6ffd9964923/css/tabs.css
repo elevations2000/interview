@@ -1,0 +1,100 @@
+
+.tab-area p {
+  font-size: 11px;
+  color: #666;
+}
+
+.tab-area input { 
+  display: none;
+}
+
+.tab-link {
+  text-transform: uppercase;
+  font-size: 10px;
+  cursor: pointer;
+  color: #555;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  float: left;
+  width: 55px;
+  padding: 5px 5px;
+  text-align: center;
+  background: #ccc;
+  border: 1px solid #bbb;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.tab-link:hover {
+  background: #eee;
+}
+
+.tab-link:nth-of-type(1) {
+  border-left: 1px solid #bbb;
+}
+
+.tab-link:hover {
+  color: #666;
+}
+
+.tab {
+  clear: both;
+  background: #ddd;
+  padding: 25px;
+  display: none;
+  height: 180px;
+  border: 1px solid #bbb;
+}
+
+@media only screen and (max-width: 1150px) {
+
+  .tab-area {
+    width: 46%;
+    margin: 2% 2% 5%;
+    float: left;
+  }
+
+}
+
+@media only screen and (max-width: 560px) {
+
+  .tab-area {
+    width: 100%;
+    margin: 0 0 5%;
+    float: left;
+  }
+
+}
+
+
+
+
+#tab-C:checked ~ label:nth-of-type(3),
+#tab-B:checked ~ label:nth-of-type(2),
+#tab-B:not(:checked) ~ #tab-C:not(:checked) ~ label:nth-of-type(1) {
+  background: #ddd;
+}
+
+
+#tab-C:checked ~ label:nth-of-type(3):after,
+#tab-B:checked ~ label:nth-of-type(2):after,
+#tab-B:not(:checked) ~ #tab-C:not(:checked) ~ label:nth-of-type(1):after {
+  position: absolute;
+  content: "";
+  margin: 5px 0 0 0;
+  width: 55px;
+  height: 1px;
+  display: block;
+  background: #ddd;
+}
+
+
+/* Checked Tabs */
+
+.tabs-checked input:nth-of-type(2):not(:checked) ~ input:nth-of-type(3):not(:checked) ~ .tab:nth-of-type(1),
+.tabs-checked input:nth-of-type(2):checked ~ .tab:nth-of-type(2),
+.tabs-checked input:nth-of-type(3):checked ~ .tab:nth-of-type(3) 
+{
+  display: block;
+}

@@ -1,0 +1,23 @@
+.hourglass
+{
+	font-family:courier, "courier new", monospace;
+	font-size:1em;
+	color:#000;
+	background-color:#eee;
+	display: inline-block;
+}
+
+.form-error
+{
+	background-color:#f95f5f;
+}
+
+legend
+{
+	background-color:#ffffff;
+}
+
+fieldset
+{
+	margin-bottom:25px;
+}
